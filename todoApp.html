@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script defer src="todo.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #Section {
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+
+        .upperBody {
+            margin-top: 5rem;
+            height: auto;
+            width: 15rem;
+            display: flex;
+            flex-direction: column;
+            color: whitesmoke;
+            background-color: black;
+            box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+            background-color: rgb(244, 244, 244);
+            border-radius: 10px;
+        }
+
+        .toDologo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: black;
+            border-bottom: 1px solid rgb(156, 156, 156);
+        }
+
+        .dateTime {
+            display: block;
+            justify-items: center;
+            align-items: center;
+            font-size: 1.2rem;
+            color: rgb(156, 156, 156);
+            margin: 1rem 0;
+        }
+
+        .todoDiv {
+            height: 11rem;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+
+        #addTask {
+            font-size: 1rem;
+            background-color: black;
+            padding: 0.5rem;
+            border-top: rgb(156, 156, 156) 1px solid;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #section2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem;
+            visibility: hidden;
+        }
+
+        #inputText {
+            height: 2rem;
+            width: 10rem;
+            border-radius: 0.3rem;
+            border: 1px solid rgb(156, 156, 156);
+            text-align: center;
+        }
+
+        #addbutton {
+            height: 2rem;
+            width: 2.5rem;
+            border-radius: 0.3rem;
+            border: 1px solid rgb(156, 156, 156);
+            margin-left: 1rem;
+            border-width: 0;
+            cursor: pointer;
+
+        }
+
+        .spanClass {
+            color: gray;
+            text-align: left;
+        }
+
+        #remove {
+            border-width: 0;
+        }
+
+        .line-through {
+            text-decoration: line-through;
+        }
+
+        .innerDiv {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            border: rgb(156, 156, 156) 1px solid;
+            border-radius: 0.2rem;
+            padding: .5rem;
+            margin: .5rem 0 0.5rem 0;
+        }
+
+        #editTask {
+            border-width: 0;
+            margin-left: 6rem
+        }
+
+        #editbutton {
+
+            height: 1.5rem;
+            width: 2rem;
+            border-radius: 0.3rem;
+            border: 1px solid rgb(156, 156, 156);
+            margin-left: 1rem;
+            border-width: 0;
+            cursor: pointer;
+            visibility: hidden;
+        }
+
+        #editText {
+            height: 1.5rem;
+            width: 8rem;
+            border-radius: 0.3rem;
+            border: 1px solid rgb(156, 156, 156);
+            text-align: center;
+            visibility: hidden;
+        }
+
+        #section3 {
+            position: absolute;
+            top: 24.5rem;
+            left: 47rem
+        }
+    </style>
+</head>
+
+<body>
+    <section id="Section">
+        <div class="upperBody">
+            <div class="toDologo">
+                <p>To Do</p>
+                <p><i class='bx bx-refresh'></i></p>
+            </div>
+            <div class="dateTime">
+                <p id="Time"></p>
+                <p id="date"></p>
+            </div>
+            <div class="todoDiv" id="todoDiv">
+
+            </div>
+            <div id="addTask" onclick="displayInput()">
+                <i class='bx bx-add-to-queue'></i> Add Task
+            </div>
+        </div>
+    </section>
+
+    <section id="section2">
+        <input type="text" id="inputText" placeholder="Add your Task">
+        <button id="addbutton" onclick="addTask()">Add</button>
+    </section>
+
+    <section id="section3">
+        <input type="text" id="editText" placeholder="edit your Task">
+        <button id="editbutton" onclick="editedTask()">edit</button>
+    </section>
+</body>
+
+</html>
