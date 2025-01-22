@@ -11,7 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let monthList = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     let dayList = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-    document.getElementById("Time").textContent = `${hours} : ${minute}`;
+    let AmOrPm 
+    if(hours<=12)
+        AmOrPm="am"
+    else
+        AmOrPm="pm"
+    document.getElementById("Time").textContent = `${hours} : ${minute} ${AmOrPm}`;
     document.getElementById("date").textContent = `${dayList[day]}, ${monthList[month]} ${date}`;
 });
 
